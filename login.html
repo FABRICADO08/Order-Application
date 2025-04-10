@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+
+        {{themecss}} {{appicons}} {{manifest}} {{startupimages}}
+    </head>
+
+    <body>
+        <div class="loginpage">
+            <div class="loginpage-header">
+                <div class="loginpage-logo">
+                    <div class="navbar-brand">
+                        <img class="mb-star" src="./img/MB_UI$Layout$MB_star_n_web.svg?637712806011516169" role="presentation">
+                        <div class="claim-container">
+                            <div class="claim-container-image">
+                                <img class="mx-image" src="./img/MB_UI$Layout$MB_wm_claim1EN_ra_n_web.svg?637712806011516169" role="presentation">
+                            </div>
+                            <div class="claim-container-text">
+                                <span>Starter App</span>
+                            </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+            <div class="loginpage-content">
+                <div class="content-background"></div>
+                <div class="content-shadow"></div>
+                <div class="loginpage-formwrapper">
+                    <form id="loginForm" class="loginpage-form" autocomplete="off">
+                        <h1>Starter App</h1>
+                        <h2 id="loginHeader"><span>Sign in to</span> Starter App</h2>
+                        <div>
+                            <div id="loginMessage" class="alert alert-danger"></div>
+                            <div class="form-group">
+                                <label class="control-label" id="usernameLabel" for="usernameInput">User name</label>
+                                <div class="inputwrapper">
+                                    <input
+                                        id="usernameInput"
+                                        class="form-control"
+                                        type="text"
+                                        placeholder="User name"
+                                        autocorrect="off"
+                                        autocapitalize="none"
+                                        autocomplete="off"
+                                    />
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" id="passwordLabel" for="passwordInput">Password</label>
+                                <div class="inputwrapper">
+                                    <input
+                                        id="passwordInput"
+                                        class="form-control"
+                                        type="password"
+                                        placeholder="Password"
+                                        autocorrect="off"
+                                        autocapitalize="none"
+                                        autocomplete="off"
+                                    />
+                                    <span class="glyphicon glyphicon-eye-close" onClick="togglePassword()"></span>
+                                </div>
+                            </div>
+                            <button id="loginButton" type="submit" class="btn btn-success btn-lg">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+
+        <script src="js/login_i18n.js?{{cachebust}}"></script>
+        <script src="js/login.js?{{cachebust}}"></script>
+        <script>
+            function togglePassword() {
+                const icon = document.querySelector("[class*=glyphicon-eye]");
+                if (icon.classList.contains("glyphicon-eye-close"))
+                    icon.classList.replace("glyphicon-eye-close", "glyphicon-eye-open");
+                else icon.classList.replace("glyphicon-eye-open", "glyphicon-eye-close");
+
+                const input = document.querySelector("#passwordInput");
+                if (input.type === "password") input.type = "text";
+                else input.type = "password";
+            }
+        </script>
+    </body>
+</html>
