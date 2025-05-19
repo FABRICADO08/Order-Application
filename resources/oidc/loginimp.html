@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Verisource - Impersonation Login</title>
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../login/login.css">
+    <link rel="stylesheet" href="../../login/main.css">
+    
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+	<script id="cobrowsescript" type="text/javascript" src="https://www.glancecdn.net/cobrowse/CobrowseJS.ashx?group=20187&site=production" data-groupid="20187" data-site="production" charset="UTF-8"></script>
+    <script type="text/javascript">
+        function changeToUpperCase(t) {
+            var eleVal = document.getElementById(t.id);
+            eleVal.value = eleVal.value.toUpperCase().replace(/ /g, '');
+        }
+    </script>
+</head>
+
+<body class="mdc-typography" style="margin:0;">
+     <img id="logo" type="image/svg+xml" src="../../../login/logo.svg" />
+     <img id="logo_mobile" class="image_mobile" src="../../../login/mobile_logo.svg">
+
+     <div class="loginContainer mdc-elevation--z5">
+        <!-- START Form  --> 
+        <form id="loginForm" action="/basiclogin/{QS}" method="post" _lpchecked="1">
+    
+    
+<!-- START Alert Message -->
+        <div id="loginMessage">
+            <div class="mdc-typography--caption" style="color:#292929;font-size:1.5rem;line-height:2.25rem; padding-bottom:25px;">Start Impersonation</div>
+            <div class="mdc-typography--caption" style="color:#292929;font-size:1.5rem;line-height:2.25rem; padding-bottom:25px;">{MESSAGE}</div>
+        </div>
+        <div id="loginFailedMessage" class="{CLASSNAMECSS}">
+            <div class="mdc-typography--caption" style="color:#b00020; font-size:1.25rem; line-height:1.50rem; padding-bottom:25px;">
+                {LOGINMESSAGE1}<br />{LOGINMESSAGE2}<br />{LOGINMESSAGE3}
+            </div>
+        </div>
+<!-- END Alert Message -->
+
+
+<!--form group username -->
+<div>
+    <div class="form-group" style="text-align:left;">
+        <label id="usernameLabel" for="usernameInput" style="font-size:1.5rem; font-weight:400;">Username</label>
+        <input id="usernameInput" class="form-control" name="username" type="text" autocomplete="username" placeholder="Username" autocorrect="off" autocapitalize="none" required>
+    </div>
+</div>
+<!--form group password -->
+<div>
+    <div class="form-group" style="text-align:left;">
+        <label id="passwordLabel" for="passwordInput" style="font-size:1.5rem; font-weight:400;">Password</label>
+        <input id="passwordInput" class="form-control" name="password" type="password" autocomplete="password" placeholder="Password" autocorrect="off" autocapitalize="none" required>
+    </div>
+</div>
+<!--form group impersonate user -->
+<div>
+    <div class="form-group" style="text-align:left;">
+        <label id="lblImpersonateUserID" for="txtImpersonateUserID" style="font-size:1.5rem; font-weight:400;">Impersonate User</label>
+        <input id="txtImpersonateUserID" class="form-control" name="txtImpersonateUserID" type="text" placeholder="Impersonate User" autocorrect="off" autocapitalize="none" required>
+    </div>    
+</div>
+<div class="actionContainer">
+    <button id="loginButton" type="submit" class="mdc-button mdc-button--raised" style="font-size:1.25rem; background-color:#00953B;">
+        Sign In
+    </button>
+</div>
+            <button type="button" class="mdc-button" style="margin-top:25px;font-size:1.25rem;" onclick="window.location.href ='/link/LookupUser';">Forgot Username? </button>
+            <button type="button" class="mdc-button" style="margin-top:25px;font-size:1.25rem;" onclick="window.location.href ='/link/ForgotPassword';">Forgot Password?</button>
+</form>
+<!-- END Form  -->
+
+<!-- START Co-browse Launch Button -->
+<button type="button" class="mdc-button" style="font-size:1.25rem;" onclick="window.GLANCE.Cobrowse.Visitor.startSession();"><i class="material-icons mdc-button__icon" aria-hidden="true">desktop_windows</i>Co-browse</button>
+<!-- END Co-browse Launch Button -->
+
+</div>
+
+<div style="display:flex; flex-wrap:wrap; flex-direction: column; align-items: center; color:#D9D8D6; background-color:#081F2D; margin: auto auto 0 auto; width:100%;padding-top: 10px; padding-bottom: 10px;">
+    <p class="mdc-typography--caption" style="text-align:center; font-size:1.25rem;">© 2020 Veriforce. All Rights Reserved. | VeriSource is optimized for Google Chrome.</p>
+</div>
+
+</body>
+</html>

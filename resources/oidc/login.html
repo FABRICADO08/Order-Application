@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>OIDC Provider - Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--<link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="../../main.css">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <script id="cobrowsescript" type="text/javascript" src="https://www.glancecdn.net/cobrowse/CobrowseJS.ashx?group=20187&site=production" data-groupid="20187" data-site="production" charset="UTF-8"></script>
+    <script type="text/javascript">
+        function changeToUpperCase(t) {
+            var eleVal = document.getElementById(t.id);
+            eleVal.value = eleVal.value.toUpperCase().replace(/ /g, '');
+        }
+    </script>
+</head>
+<body class="mdc-typography" style="margin:0;">
+	
+	
+<div class="loginContainer  mdc-elevation--z5">
+ <!-- START Form  --> 
+    <form id="loginForm" class="login-form" action="/basiclogin/?{QS}" method="post" _lpchecked="1">
+<!-- START Alert Message -->
+	<div>
+	
+	<span><img  class="logo" src="../../logo.png" alt="mendix"/></span>
+	<span><h1>OIDC Provider Login</h1></span>
+	</div>
+        <div id="loginMessage">
+            <div class="mdc-typography--caption" style="color:#b00020">{MESSAGE}</div>
+        </div>
+        <div id="loginFailedMessage" class="{CLASSNAMECSS}">
+            <div class="mdc-typography--caption" style="color:#b00020">{LOGINMESSAGE1}<br />{LOGINMESSAGE2}<br />{LOGINMESSAGE3}</div>
+        </div>
+<!-- END Alert Message -->
+			<p style="text-align:left;">Username</p>
+            <div class="mdc-text-field username">
+                <input name="username" class="mdc-text-field__input" required type="text" id="Username" value="">
+            </div>
+            <p style="text-align:left;">Password</p>
+            <div class="mdc-text-field mdc-text-field--filledd mdc-text-field--with-trailing-icon password">
+                <button tabindex="-1"  type="button" class="material-icons mdc-text-field__icon revealPassword" onclick="event.preventDefault(); showPassword();">visibility</button>
+                <input type="password" name="password" class="passwordField mdc-text-field__input" required id="Password">
+                <div class="mdc-notched-filled">
+                    <div class="mdc-notched-filled__leading"></div>
+                    <div class="mdc-notched-filled__notch">
+                       
+                        <div class="mdc-line-ripple"></div>
+                    </div>
+                    <div class="mdc-notched-filled__trailing"></div>
+                </div>
+            </div>
+            <div class="actionContainer">
+                <button type="submit" class="mdc-button mdc-button--raised" style="background-color: #00953B;">
+                    Sign In
+                </button>
+            </div>
+        </form>
+        <!-- END Form  -->
+
+</div>
+<!-- START Show Password Script -->
+<script>
+    const showPassword = () => {
+        const passwordField = document.querySelector(".passwordField");
+        passwordField.type === "password" ? passwordField.type = "text" : passwordField.type = "password";
+    };
+</script>
+<!-- END Show Password Script -->
+
+</body>
+</html>
